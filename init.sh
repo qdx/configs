@@ -24,7 +24,3 @@ curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 cd ~/
 git clone git@bitbucket.org:DChar/vimwiki.git .vimwiki
  
-# get my personal vim configs
-cd ~/
-curl https://gist.github.com/qdx/7575672/raw/f8d94c31f6f77cc542167231d146759057ef327b/.vimrc.bundles.local -o .vimrc.bundles.local
-curl https://gist.github.com/qdx/7575666/raw/bff9cba08241915d2a8e8bfc42e59445367b1ae8/.vimrc.local -o .vimrc.local
