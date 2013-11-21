@@ -1,0 +1,139 @@
+" Maintainer: DeXin Qi<qdxzzz@gmail.com>
+" set Encoding
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"set langmenu=zh_CN.UTF-8
+"language message zh_CN.UTF-8
+
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
+
+"+++Universal settings++++
+set term=xterm-256color
+set tabstop=4           " Force tabs to be displayed/expanded to 4 spaces
+set shiftwidth=4        " When auto-indenting, indent by this much.
+set aw
+set fdm=indent          " zip code by indent
+set foldcolumn=4        " show fold area at left
+set guifont=Consolas:h13:cANSI    "set font
+set guioptions-=T       " += will show GUI tool bar when -= hide them
+set guioptions+=m       " == will show GUI menu bar, when -= hide them
+set incsearch           " do incremental searching
+set nu                  " show line number
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+" about text formatting
+set autoindent          " auto indent
+set smartindent         " smart indent
+set cindent             " c language like indent
+set smarttab            " only TAB
+set expandtab           " force tab be spaces
+set textwidth=80        " auto line feed with 80 chars one line
+
+set guioptions+=b       " temp
+
+"=========All Key Maps===========
+" mapping most recently used files list with <F2>
+nmap <F2> :CtrlPMRU<CR>
+
+" toggle nerd tree with F3
+nmap <F3> <ESC>:NERDTreeToggle<CR>
+
+" cleans the search highlights
+nmap <silent><F4> :set invhlsearch<CR>
+
+" toggle spelling check [i do not understand how it works]
+nmap <silent><F6> :set spell!<cr><bar>:echo "spell check: " . strpart("offon", 3 * &spell, 3)<CR>
+
+" set taglist toggle
+map <F8> :TagbarToggle<CR>
+
+" map gundo
+map <F10> :UndotreeToggle<CR>
+
+" Map FencView with
+map <F11> :FencView<CR>
+
+" mapping editing vimrc with F12
+map <F12> :tabnew ~/.vimrc.local<CR>
+
+
+" 持久撤销 Persistent Undo
+"set undofile
+"set undodir=~/._undodir
+"set undolevels=1000    "maximum changes can be undone
+
+" settings for pathogen
+"call pathogen#infect()
+
+" set ctags path
+"let Tlist_Ctags_Cmd="C:\Program Files (x86)\Ctags\ctags.exe"
+
+" zencoding
+let g:user_emmet_expandabbr_key = '<c-z>'
+let g:use_emmet_complete_tag = 1
+
+" Python mode: Set key 'R' for run python code
+"let g:pymode_run_key = 'R'
+
+" setting the MRU file location
+"let MRU_File = 'C:\Program Files (x86)\Vim\pluginNeed\_MRUfile\MRU_Record_file'
+
+" set the number of spelling recommendations
+" Tips: z=    open recommendations list
+"     zg    add word to word list
+"     ]s    move to next spelling error
+"     [s    move to previous spelling error
+set sps=best,5
+
+" vimwiki
+" tips: \ww    opens the main vimwiki
+"     \ws    choose vimwiki space
+"     \w\w    open diary of the day
+"     \w\t    open diary of the day in new split
+let g:vimwiki_use_mouse=1
+let g:vimwiki_list=[{
+            \ 'path': '~/.vimwiki/main/',
+            \ 'path_html': '~/.vimwiki/main/html',
+            \ 'diary_link_count': 1},
+            \{'path': '~/.vimwiki/vim/',
+            \ 'path_html': '~/.vimwiki/vim/html'},
+            \{'path': '~/.vimwiki/music',
+            \ 'path_html': '~/.vimwiki/music/html'},
+            \{'path': '~/.vimwiki/programmer',
+            \ 'path_html': '~/.vimwiki/programmer/html'},
+            \{'path': '~/.vimwiki/bicycle',
+            \ 'path_html': '~/.vimwiki/bicycle/html'},
+            \{'path': '~/.vimwiki/Facemeet',
+            \ 'path_html': '~/.vimwiki/Facemeet/html'},
+            \{'path': '~/.vimwiki/graduatePaper',
+            \ 'path_html': '~/.vimwiki/graduatePaper/html'},
+            \{'path': '~/.vimwiki/Github',
+            \ 'path_html': '~/.vimwiki/Github/html'},
+            \{'path': '~/.vimwiki/Mathematica',
+            \ 'path_html': '~/.vimwiki/Mathematica/html'}]
+
+
+"关于tags:
+"set tags=tags;
+"set autochdir
+"filetype plugin on
+"filetype on
+"au BufEnter *.txt setlocal ft=txt
+
+"色彩主题:
+"colorscheme Tomorrow-Night-Bright
+"colorscheme koehler    " set the color scheme
+"colorscheme BlackSea   " set the color scheme
+"colorscheme af         " set the color scheme
+colorscheme solarized   " set the color scheme
+"let g:kolor_italic=1                    " Enable italic. Default: 1
+"let g:kolor_bold=1                      " Enable bold. Default: 1
+"let g:kolor_underlined=0                " Enable underline for 'Underlined'. Default: 0
+"let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+
+"FencView:
+"打开文件时自动识别文件的编码
+let g:fencview_autodetect = 0
+"在:FencView命令的状态栏显示编码信息等信息
+set statusline=[%n]%<%f%y%h%m[%{&fenc!=''?&fenc:&enc}:%{&ff}]%r%=[%b\ 0x%B]\ %l\ of\ %L,%c%V\ Page\ %N\ %P
