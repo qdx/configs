@@ -122,11 +122,12 @@ let g:vimwiki_list=[{
 "au BufEnter *.txt setlocal ft=txt
 
 "色彩主题:
-"colorscheme Tomorrow-Night-Bright
+colorscheme Tomorrow-Night-Bright
 "colorscheme koehler    " set the color scheme
 "colorscheme BlackSea   " set the color scheme
 "colorscheme af         " set the color scheme
-colorscheme solarized   " set the color scheme
+"colorscheme solarized   " set the color scheme
+"colorscheme solarized   " set the color scheme
 "let g:kolor_italic=1                    " Enable italic. Default: 1
 "let g:kolor_bold=1                      " Enable bold. Default: 1
 "let g:kolor_underlined=0                " Enable underline for 'Underlined'. Default: 0

@@ -1,3 +1,4 @@
 Bundle 'mattn/emmet-vim'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'mbbill/fencview'
+Bundle 'chriskempson/vim-tomorrow-theme'
