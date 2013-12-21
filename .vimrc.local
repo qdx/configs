@@ -1,4 +1,7 @@
+" This is a local vimrc config based on the spf13 vim distribution
 " Maintainer: DeXin Qi<qdxzzz@gmail.com>
+
+
 " set Encoding
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -9,28 +12,31 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "source $VIMRUNTIME/menu.vim
 
 "+++Universal settings++++
-set term=xterm-256color
-set tabstop=4           " Force tabs to be displayed/expanded to 4 spaces
-set shiftwidth=4        " When auto-indenting, indent by this much.
-set aw
-set fdm=indent          " zip code by indent
-set foldcolumn=4        " show fold area at left
-set guifont=Consolas:h13:cANSI    "set font
-set guioptions-=T       " += will show GUI tool bar when -= hide them
-set guioptions+=m       " == will show GUI menu bar, when -= hide them
-set incsearch           " do incremental searching
-set nu                  " show line number
-set ruler               " show the cursor position all the time
-set showcmd             " display incomplete commands
-" about text formatting
+"set term=xterm-256color
+set tabstop=2           " Force tabs to be displayed/expanded to 4 spaces
+set shiftwidth=2        " When auto-indenting, indent by this much.
+set softtabstop=2
+set expandtab           " force tab be spaces
 set autoindent          " auto indent
 set smartindent         " smart indent
 set cindent             " c language like indent
 set smarttab            " only TAB
-set expandtab           " force tab be spaces
-set textwidth=80        " auto line feed with 80 chars one line
 
-set guioptions+=b       " temp
+set aw
+set fdm=syntax          " zip code by indent
+"set foldcolumn=4        " show fold area at left
+set guifont=Consolas:h13:cANSI    "set font
+"set guioptions-=T       " += will show GUI tool bar when -= hide them
+"set guioptions+=m       " == will show GUI menu bar, when -= hide them
+set incsearch           " do incremental searching
+"set nu                  " show line number
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+" about text formatting
+set textwidth=80        " auto line feed with 80 chars one line
+set nospell
+
+let NERDTreeIgnore = ['\.orig$']
 
 "=========All Key Maps===========
 " mapping most recently used files list with <F2>
@@ -48,7 +54,7 @@ nmap <silent><F6> :set spell!<cr><bar>:echo "spell check: " . strpart("offon", 3
 " set taglist toggle
 map <F8> :TagbarToggle<CR>
 
-" map gundo
+" map undo tree
 map <F10> :UndotreeToggle<CR>
 
 " Map FencView with
@@ -57,27 +63,22 @@ map <F11> :FencView<CR>
 " mapping editing vimrc with F12
 map <F12> :tabnew ~/.vimrc.local<CR>
 
+" mapping ctrl+j to jump to the end of line in insert mode
+imap <c-l> <End>
 
-" 持久撤销 Persistent Undo
-"set undofile
-"set undodir=~/._undodir
-"set undolevels=1000    "maximum changes can be undone
+" mapping ctrl+j to jump to the end of line in insert mode
+inoremap <c-h> <Home>
 
-" settings for pathogen
-"call pathogen#infect()
+" shortcut for conqueterm
+:cabbrev Ct ConqueTermSplit bash
+let g:ConqueTerm_ToggleKey = 0
 
-" set ctags path
-"let Tlist_Ctags_Cmd="C:\Program Files (x86)\Ctags\ctags.exe"
+" Stop NERDTree from closing after open a file
+let NERDTreeQuitOnOpen=0
 
-" zencoding
+" emmet
 let g:user_emmet_expandabbr_key = '<c-z>'
 let g:use_emmet_complete_tag = 1
-
-" Python mode: Set key 'R' for run python code
-"let g:pymode_run_key = 'R'
-
-" setting the MRU file location
-"let MRU_File = 'C:\Program Files (x86)\Vim\pluginNeed\_MRUfile\MRU_Record_file'
 
 " set the number of spelling recommendations
 " Tips: z=    open recommendations list
@@ -114,13 +115,6 @@ let g:vimwiki_list=[{
             \ 'path_html': '~/.vimwiki/Mathematica/html'}]
 
 
-"关于tags:
-"set tags=tags;
-"set autochdir
-"filetype plugin on
-"filetype on
-"au BufEnter *.txt setlocal ft=txt
-
 "色彩主题:
 colorscheme Tomorrow-Night-Bright
 "colorscheme koehler    " set the color scheme
@@ -128,10 +122,6 @@ colorscheme Tomorrow-Night-Bright
 "colorscheme af         " set the color scheme
 "colorscheme solarized   " set the color scheme
 "colorscheme solarized   " set the color scheme
-"let g:kolor_italic=1                    " Enable italic. Default: 1
-"let g:kolor_bold=1                      " Enable bold. Default: 1
-"let g:kolor_underlined=0                " Enable underline for 'Underlined'. Default: 0
-"let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 
 "FencView:
 "打开文件时自动识别文件的编码

@@ -1,4 +1,4 @@
-# This bash init my git configs and vim configs
+# This bash installs software, init git configs and vim configs
 # Dexin Qi
 # qdxzzz@gmail.com
 
@@ -7,13 +7,17 @@
 
 # for this thing to work, you have to manually setup ssh identity and add it to
 # bitbucket first(in order to clone vimwiki)
-
 # manually run and add to github bitbucket
 # sudp apt-get install openssh-server openssh-client
 # ssh-keygen -t rsa -C "qdxzzz@gmail.com"
  
-# manual commands:
+# software install:
+sudo apt-get install exuberant-ctags
+sudo apt-get install ack-grep
+sudo apt-get install dos2unix
 sudo apt-get install git
+
+# get the configs
 cd ~/
 git init
 git remote add origin git@github.com:qdx/configs.git
